@@ -1,29 +1,36 @@
-# cab-management
+# Cab-management
 
-Rest calls to verify oprations
+# Rest calls to verify oprations
 
-HttpMethod:Post
-Uri:/authenticate
-RequestBody:
+* Authentication
+ HttpMethod:Post </br>
+ Uri:/authenticate </br>
+ RequestBody:
+ ```
 {
     "username":"maheshm",
     "password":"password"
 }
+```
 
-HttpMethod:Get
-Uri:/getAllBookings/1
-Authorization: Bearer 
-Discription: To get all bookings related to customer id 1
+* Get All Bookings
+HttpMethod:Get </br>
+Uri:/getAllBookings/1 </br>
+Authorization: Bearer </br>
+Description: To get all bookings related to customer id 1 </br>
 
-HttpMethod:Get
-Uri:/getNearByCabs
-Authorization: Bearer 
-Discription: To get near by cabs
+* Get Near By Cabs
+HttpMethod:Get </br>
+Uri:/getNearByCabs </br>
+Authorization: Bearer </br>
+Description: To get near by cabs </br>
 
-HttpMethod:Get
-Uri:/requestBooking
-Authorization: Bearer 
-RequestBody:
+* Request Booking
+HttpMethod:Get </br>
+Uri:/requestBooking </br>
+Authorization: Bearer </br>
+RequestBody: </br>
+```
 {
     "pickupFrom": {
             "type": "Point",
@@ -38,7 +45,8 @@ RequestBody:
             ]
         }
 }
-Discription: To get request cab from pickup point to drop point
+```
+Description: To get request cab from pickup point to drop point
 
 
 

@@ -2,7 +2,7 @@
 
 # Rest calls to verify oprations
 
-* Authentication
+* Authentication </br>
  HttpMethod:Post </br>
  Uri:/authenticate </br>
  RequestBody:
@@ -13,19 +13,19 @@
 }
 ```
 
-* Get All Bookings
+* Get All Bookings </br>
 HttpMethod:Get </br>
 Uri:/getAllBookings/1 </br>
 Authorization: Bearer </br>
 Description: To get all bookings related to customer id 1 </br>
 
-* Get Near By Cabs
+* Get Near By Cabs </br>
 HttpMethod:Get </br>
 Uri:/getNearByCabs </br>
 Authorization: Bearer </br>
 Description: To get near by cabs </br>
 
-* Request Booking
+* Request Booking </br>
 HttpMethod:Get </br>
 Uri:/requestBooking </br>
 Authorization: Bearer </br>

@@ -1,6 +1,13 @@
 # Cab-management
 
-# Rest calls to verify oprations
+## Technologies 
+1.Spring boot </br>
+2.Rest  </br>
+3.Hibernate/JPA spatial </br>
+4.Postgress PostGIS extention </br>
+5.JWT Authentication </br>
+
+## Rest calls to verify oprations
 
 * Authentication </br>
  HttpMethod:Post </br>

@@ -1,0 +1,25 @@
+type Customer {
+	id:ID!
+	customerName:String!
+	currLocation:Point!
+}
+
+type Vehicle {
+	id:ID!
+	vehicleType:String
+	vehicleNumber:String
+	vehicleCurrentLocation:Point!
+}
+
+type Booking {
+	id:ID!
+	customerId:ID!
+	vehicleId:ID!
+	pickupPoint:Point!
+	dropPoint:Point!
+	isOnGoingRide:Boolean!
+}
+
+type Query {  
+    getAllBookings(customerId: ID!): [Booking]  
+}

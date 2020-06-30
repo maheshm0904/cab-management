@@ -10,6 +10,7 @@ import com.vividsolutions.jts.geom.Point;
 
 /**
  * @author maheshm
+ * This entity represents the customer table
  *
  */
 @Entity

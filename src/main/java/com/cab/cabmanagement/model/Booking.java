@@ -11,6 +11,10 @@ import javax.persistence.Table;
 
 import com.vividsolutions.jts.geom.Point;
 
+/**
+ * @author maheshm
+ * This entity represents the booking table
+ */
 @Entity
 @Table(name = "booking")
 public class Booking extends BaseEntity {

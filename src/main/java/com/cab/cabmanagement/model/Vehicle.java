@@ -12,7 +12,7 @@ import com.vividsolutions.jts.geom.Polygon;
 
 /**
  * @author maheshm
- *
+ * This entity represents the vehicle table
  */
 @Entity
 @Table(name="vehicle")

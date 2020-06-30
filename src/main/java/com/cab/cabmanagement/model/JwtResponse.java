@@ -2,6 +2,11 @@ package com.cab.cabmanagement.model;
 
 import java.io.Serializable;
 
+/**
+ * @author maheshm
+ * This dto will used to map authentication response payload
+ *
+ */
 public class JwtResponse implements Serializable {
 	private static final long serialVersionUID = -8091879091924046844L;
 	private final String jwttoken;

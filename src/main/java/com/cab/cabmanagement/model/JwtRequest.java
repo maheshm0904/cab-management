@@ -1,6 +1,10 @@
 package com.cab.cabmanagement.model;
 import java.io.Serializable;
 
+/**
+ * @author maheshm
+ * This dto will used to map authentication request payload
+ */
 public class JwtRequest implements Serializable {
 	/**
 	 * 

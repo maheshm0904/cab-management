@@ -17,6 +17,10 @@ import com.cab.cabmanagement.model.JwtRequest;
 import com.cab.cabmanagement.model.JwtResponse;
 import com.cab.cabmanagement.service.JwtUserDetailsService;
 
+/**
+ * @author maheshm
+ *
+ */
 @RestController
 @CrossOrigin
 public class JwtAuthenticationController {
@@ -27,7 +31,12 @@ public class JwtAuthenticationController {
 	@Autowired
 	private JwtUserDetailsService userDetailsService;
 
-	@PostMapping(value = "/authenticate")
+	/**
+	 * @param authenticationRequest
+	 * @return authentication token
+	 * @throws Exception
+	 */
+	@PostMapping(value = "/cab-management/authenticate")
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
@@ -35,6 +44,13 @@ public class JwtAuthenticationController {
 		return ResponseEntity.ok(new JwtResponse(token));
 	}
 
+	
+	/**
+	 * This method will check credentials of the user and throws bad credential exception if the credentials are not matched
+	 * @param username
+	 * @param password
+	 * @throws Exception
+	 */
 	private void authenticate(String username, String password) throws Exception {
 		try {
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));

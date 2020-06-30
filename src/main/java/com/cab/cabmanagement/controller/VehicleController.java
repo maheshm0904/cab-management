@@ -14,6 +14,10 @@ import com.vividsolutions.jts.geom.LinearRing;
 import com.vividsolutions.jts.geom.Polygon;
 import com.vividsolutions.jts.geom.PrecisionModel;
 
+/**
+ * @author maheshm
+ *
+ */
 @RestController
 public class VehicleController {
 	
@@ -22,15 +26,20 @@ public class VehicleController {
 	@Autowired
 	private VehicleService vehicleService;
 	
-	@GetMapping("/getNearByCabs")
+	/**
+	 * This end point will get all nearby cabs
+	 * @return list of cabs which are present nearby
+	 */
+	@GetMapping("/cab-management/cabs")
 	public List<Vehicle> getNearByCabs() {
-		GeometryFactory geometryFactory = new GeometryFactory(new PrecisionModel(), SRID);
-		LinearRing linear = new GeometryFactory().createLinearRing(getCoordinates());
-		Polygon poly = new Polygon(linear, null, geometryFactory);
-		return vehicleService.getNearByCabs(poly);
+		return vehicleService.getNearByCabs(getPolygon());
 		
 	}
 	
+	/**
+	 * This method used to create dummy coordinates which will be an linear polygon eg.road etc 
+	 * @return Array of coordinates
+	 */
 	public Coordinate[] getCoordinates() {
 		Coordinate[] coordinates = new Coordinate[5];
 		coordinates[0] = new Coordinate(1, 2); 
@@ -39,6 +48,17 @@ public class VehicleController {
 		coordinates[3] = new Coordinate(55, 100);
 		coordinates[4] = new Coordinate(1, 2);
 		return coordinates;	
+	}
+	
+	/**
+	 * This method used to get polygon as current location
+	 * @return
+	 */
+	public Polygon getPolygon() {
+		GeometryFactory geometryFactory = new GeometryFactory(new PrecisionModel(), SRID);
+		LinearRing linear = new GeometryFactory().createLinearRing(getCoordinates());
+		Polygon poly = new Polygon(linear, null, geometryFactory);
+		return poly;
 	}
 
 }
